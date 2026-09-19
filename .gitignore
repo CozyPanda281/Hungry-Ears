@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+local.properties
+captures/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.kotlin/
+
+# Keystores (never commit signing material)
+*.keystore
+*.jks
+key.properties
+
+# OS
+.DS_Store
+
+# Logs
+*.log

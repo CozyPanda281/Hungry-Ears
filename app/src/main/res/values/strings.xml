@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Hungry Ears</string>
+
+    <string name="tab_home">Home</string>
+    <string name="tab_library">Library</string>
+    <string name="tab_search">Search</string>
+    <string name="tab_playlists">Playlists</string>
+
+    <string name="home_title">Home</string>
+    <string name="home_empty_title">Your library is quiet</string>
+    <string name="home_empty_body">Music on your device will show up here after you add some.</string>
+
+    <string name="library_title">Library</string>
+    <string name="library_section_tracks">Tracks</string>
+    <string name="library_section_albums">Albums</string>
+    <string name="library_section_artists">Artists</string>
+    <string name="library_section_genres">Genres</string>
+    <string name="library_section_folders">Folders</string>
+    <string name="library_empty_title">Nothing here yet</string>
+    <string name="library_empty_body">Songs on your device will appear here.</string>
+    <string name="library_empty_albums">Albums on your device will appear here.</string>
+    <string name="library_empty_artists">Artists from your music will appear here.</string>
+    <string name="library_empty_genres">Genres in your library will appear here.</string>
+    <string name="library_empty_folders">Music folders on your device will appear here.</string>
+    <string name="library_permission_title">Music access needed</string>
+    <string name="library_permission_body">Hungry Ears reads only the music on your device — nothing leaves your phone.</string>
+    <string name="library_permission_action">Grant access</string>
+
+    <plurals name="track_count">
+        <item quantity="one">%d song</item>
+        <item quantity="other">%d songs</item>
+    </plurals>
+
+    <string name="search_hint">Search songs, artists, albums</string>
+    <string name="search_empty_prompt">Type a song, artist or album to start looking.</string>
+    <string name="search_recent_title">Recent</string>
+    <string name="search_recent_clear">Clear</string>
+    <string name="search_no_results_title">No matches</string>
+    <string name="search_no_results_body">Nothing found for “%1$s”. Try another word or spelling.</string>
+    <string name="search_section_tracks">Songs</string>
+    <string name="search_section_artists">Artists</string>
+    <string name="search_section_albums">Albums</string>
+    <string name="search_section_genres">Genres</string>
+    <string name="search_section_playlists">Playlists</string>
+
+    <string name="playlists_title">Playlists</string>
+    <string name="playlists_empty_title">No playlists yet</string>
+    <string name="playlists_empty_body">Playlists you create will appear here.</string>
+    <string name="playlists_new">New playlist</string>
+    <string name="playlists_create_title">New playlist</string>
+    <string name="playlists_name_hint">Playlist name</string>
+    <string name="playlists_rename_title">Rename playlist</string>
+    <string name="playlists_delete">Delete</string>
+    <string name="playlists_delete_title">Delete playlist?</string>
+    <string name="playlists_delete_body">This removes the playlist, not your songs.</string>
+    <string name="playlists_rename">Rename</string>
+    <string name="playlists_play_all">Play all</string>
+    <string name="playlists_empty_tracks_title">No songs yet</string>
+    <string name="playlists_empty_tracks_body">Add songs from your library using the menu on a track.</string>
+    <string name="playlists_move_up">Move up</string>
+    <string name="playlists_move_down">Move down</string>
+    <string name="playlists_remove_track">Remove from playlist</string>
+
+    <string name="add_to_playlist_title">Add to playlist</string>
+    <string name="add_to_playlist_empty">Create your first playlist below.</string>
+    <string name="add_to_playlist_new_hint">New playlist name</string>
+    <string name="add_to_playlist_create">Create</string>
+    <string name="playlist_added_to">Added to %1$s</string>
+    <string name="playlist_already_in">Already in %1$s</string>
+
+    <string name="favourite_add">Add to favourites</string>
+    <string name="favourite_remove">Remove from favourites</string>
+    <string name="track_more">More options</string>
+    <string name="action_back">Back</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_create">Create</string>
+    <string name="dialog_rename">Rename</string>
+
+    <string name="mini_player_open">Open now playing</string>
+    <string name="mini_player_shuffle">Shuffle</string>
+    <string name="mini_player_previous">Previous track</string>
+    <string name="mini_player_play">Play</string>
+    <string name="mini_player_pause">Pause</string>
+    <string name="mini_player_next">Next track</string>
+    <string name="mini_player_repeat_off">Repeat off</string>
+    <string name="mini_player_repeat_all">Repeat all</string>
+    <string name="mini_player_repeat_one">Repeat one</string>
+    <string name="mini_player_up_next">Up next: %1$s</string>
+
+    <string name="playback_error_unsupported">This format can\'t be played</string>
+    <string name="playback_error_failed">Can\'t play this track</string>
+</resources>

@@ -1,0 +1,6 @@
+<resources>
+    <color name="launch_background">#0E0E11</color>
+    <color name="ic_launcher_background">#E0A458</color>
+    <color name="ic_launcher_foreground_disc">#0E0E11</color>
+    <color name="ic_launcher_foreground_play">#E0A458</color>
+</resources>
