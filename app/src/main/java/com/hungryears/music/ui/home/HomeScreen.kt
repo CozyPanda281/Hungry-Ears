@@ -23,7 +23,7 @@ import com.hungryears.music.ui.theme.HungryEarsSpacing
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
-    viewModel: HomeViewModel = viewModel(),
+    viewModel: HomeViewModel = viewModel(factory = HomeViewModel.Factory),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     HomeScreenContent(

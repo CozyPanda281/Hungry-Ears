@@ -37,7 +37,7 @@ class AppContainer(context: Context) {
     val searchRepository: SearchRepository by lazy { SearchRepository(database) }
 
     val recommendationRepository: RecommendationRepository by lazy {
-        RecommendationRepository(database)
+        RecommendationRepository(libraryDao = database.libraryDao())
     }
 
     val playerController: PlayerController by lazy {

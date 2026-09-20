@@ -6,12 +6,15 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.hungryears.music.HungryEarsApplication
+import com.hungryears.music.data.repository.FavouritesRepository
 import com.hungryears.music.data.repository.LibraryRepository
 import com.hungryears.music.data.repository.RecommendationRepository
+import com.hungryears.music.domain.model.Artist
 import com.hungryears.music.domain.model.Track
 import com.hungryears.music.domain.recommendation.HomeSection
 import com.hungryears.music.domain.recommendation.HomeSectionId
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
@@ -25,6 +28,7 @@ data class HomeUiState(
 class HomeViewModel(
     private val recommendationRepository: RecommendationRepository,
     libraryRepository: LibraryRepository,
+    favouritesRepository: FavouritesRepository,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(HomeUiState())
@@ -34,7 +38,7 @@ class HomeViewModel(
         viewModelScope.launch {
             recommendationRepository
                 .observeHomeSections(
-                    favouriteTrackIds = libraryRepository.observeFavouriteIds(),
+                    favouriteTrackIds = favouritesRepository.observeFavouriteIds(),
                     tracks = libraryRepository.observeTracks(),
                 )
                 .collect { sections -> _state.value = sections.toUiState() }
@@ -48,10 +52,10 @@ class HomeViewModel(
         var recentlyAdded = emptyList<Track>()
         forEach { section ->
             when (section.id) {
-                HomeSectionId.CONTINUE_LISTENING -> continueListening = section.tracks
-                HomeSectionId.MADE_FOR_YOU -> madeForYou = section.tracks
-                HomeSectionId.FAVOURITE_ARTISTS -> favouriteArtists = section.artists
-                HomeSectionId.RECENTLY_ADDED -> recentlyAdded = section.tracks
+                HomeSectionId.CONTINUE_LISTENING -> continueListening = section.tracks.map { it.track }
+                HomeSectionId.MADE_FOR_YOU -> madeForYou = section.tracks.map { it.track }
+                HomeSectionId.FAVOURITE_ARTISTS -> favouriteArtists = section.artists.map { it.artist }
+                HomeSectionId.RECENTLY_ADDED -> recentlyAdded = section.tracks.map { it.track }
             }
         }
         return HomeUiState(
@@ -70,6 +74,7 @@ class HomeViewModel(
                 HomeViewModel(
                     recommendationRepository = app.container.recommendationRepository,
                     libraryRepository = app.container.libraryRepository,
+                    favouritesRepository = app.container.favouritesRepository,
                 )
             }
         }
